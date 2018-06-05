@@ -1,0 +1,16 @@
+
+<div class = "main">
+
+<h1> TASK DETAILS </h1>
+
+
+<p> <%= @task.title.capitalize %> </p>
+
+<p> Description :  <%= @task.details.capitalize %> </p>
+
+
+
+<div class= "btn button"> <%= link_to('Edit this task', "#{@task.id}/edit") %> </div>
+
+
+</div>

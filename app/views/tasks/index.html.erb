@@ -1,0 +1,37 @@
+
+
+
+<div class = "main">
+
+<h1>MY TASKS OF TODAY </h1>
+
+<ul class= "list-unstyled">
+
+<% @tasks.each do |task| %>
+
+
+<% if task.completed == true  %>
+
+<li class= "box"> <i class="far fa-check-square"> </i> <%= task.title.capitalize %> <%= link_to('See details''<i class="fas fa-arrow-right"></i>'.html_safe , task_path(task)) %>
+
+  <%= link_to '<i class="far fa-trash-alt"></i>'.html_safe, task_path(task),
+      method: :delete,
+      data: { confirm: "YOU ARE LAZY are you sure ?????" } %>   </li>
+
+<% else   %>
+
+ <li class="box"> <i class="far fa-square"></i> <%= task.title.capitalize %> <%= link_to('See details' '<i class="fas fa-arrow-right"></i>'.html_safe , task_path(task)) %>  <%= link_to '<i class="far fa-trash-alt"></i>'.html_safe, task_path(task),
+      method: :delete,
+      data: { confirm: "YOU ARE LAZY are you sure ?????" } %>  </li>
+
+<% end %>
+
+
+<% end %>
+
+</ul>
+
+
+<div class= "btn button"> <%= link_to('Add a task', 'tasks/new') %> </div>
+
+</div>
